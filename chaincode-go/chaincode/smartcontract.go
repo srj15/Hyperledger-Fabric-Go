@@ -71,7 +71,7 @@ func (s *SmartContract) CreateTransaction(ctx contractapi.TransactionContextInte
     return err
   }
 
-  return ctx.GetStub().PutState(tranid, transJSON)
+  return ctx.GetStub().PutState(trans.TranId, transJSON)
 }
 
 // ReadTransaction returns the transaction stored in the world state with given tranid.
@@ -116,7 +116,7 @@ func (s *SmartContract) UpdateTransaction(ctx contractapi.TransactionContextInte
     return err
   }
 
-  return ctx.GetStub().PutState(tranid, transJSON)
+  return ctx.GetStub().PutState(trans.TranId, transJSON)
 }
 
 // TranExists returns true when transaction with given ID exists in world state
