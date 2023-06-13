@@ -56,7 +56,7 @@ func (s *SmartContract) CreateTransaction(ctx contractapi.TransactionContextInte
     return err
   }
   if exists {
-    return fmt.Errorf("the transaction %s already exists", id)
+    return fmt.Errorf("the transaction %s already exists", tranid)
   }
 
   trans := Transaction{
@@ -71,7 +71,7 @@ func (s *SmartContract) CreateTransaction(ctx contractapi.TransactionContextInte
     return err
   }
 
-  return ctx.GetStub().PutState(id, transJSON)
+  return ctx.GetStub().PutState(tranid, transJSON)
 }
 
 // ReadTransaction returns the transaction stored in the world state with given tranid.
@@ -81,7 +81,7 @@ func (s *SmartContract) ReadTransaction(ctx contractapi.TransactionContextInterf
     return nil, fmt.Errorf("failed to read from world state: %v", err)
   }
   if tranJSON == nil {
-    return nil, fmt.Errorf("the transaction %s does not exist", id)
+    return nil, fmt.Errorf("the transaction %s does not exist", tranid)
   }
 
   var tran Transaction
