@@ -9,7 +9,6 @@ import (
 
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
 	"github.com/srj15/Hyperledger-Fabric-Go/chaincode-go/chaincode"
-	// "gecgithub01.walmart.com/s0g0com/Hyperledger-DisputeNegationSystem/chaincode-go/chaincode"
 )
 
 func main() {
